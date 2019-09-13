@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/shubhamgupta2901/nodejs-notes-app/issues"
   },
-  "homepage": "https://github.com/shubhamgupta2901/nodejs-notes-app#readme"
+  "homepage": "https://github.com/shubhamgupta2901/nodejs-notes-app#readme",
+  "dependencies": {
+    "chalk": "^2.4.2"
+  }
 }
