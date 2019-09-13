@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/shubhamgupta2901/nodejs-notes-app#readme",
   "dependencies": {
-    "chalk": "^2.4.2"
+    "chalk": "^2.4.2",
+    "yargs": "^14.0.0"
   }
 }
