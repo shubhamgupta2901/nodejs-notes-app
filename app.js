@@ -11,8 +11,9 @@ const addNote = (argv) => {
     notes.addNote(argv.title,argv.body);
 }
 
-const removeNote = () => {
-    console.log('Remove a note.')
+const removeNote = (argv) => {
+    console.log('Remove a note with title: ' + argv.title);
+    console.log(argv);
 }
 
 const listNotes = () => {
@@ -47,6 +48,14 @@ yargs.command({
 yargs.command({
     command: 'remove',
     describe: 'Remove an existing note',
+    builder: {
+        //creating title property for remove command
+        title: {
+            describe: 'Title of the note to be removed',
+            demandOption: true,
+            type: 'string',
+        }
+    },
     handler: removeNote,
 })
 
