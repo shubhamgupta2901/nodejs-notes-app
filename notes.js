@@ -55,6 +55,21 @@ const listNotes = ()=>{
     console.log(chalk.blue(noteTitles.join("\n")));
 }
 
+/**
+ * Display the title and body of the note if it is saved in the file.
+ * @param {} title 
+ */
+const readNote = (title) => {
+    const notes = loadNotes();
+    const indexOfNoteWithSameTitle = notes.length === 0 ? -1 : notes.findIndex(note=> note.title === title);
+    if(indexOfNoteWithSameTitle === -1){
+        console.log(chalk.red(`No note with title ${chalk.red.bold.underline(title)} found!`));
+        return;
+    }
+    console.log(chalk.blue.bold.underline(notes[indexOfNoteWithSameTitle].title));
+    console.log(notes[indexOfNoteWithSameTitle].body);
+    return;
+}
 
 /**
  * Read the file and return the JSON inside it as a JS object.
@@ -91,4 +106,5 @@ module.exports = {
     addNote,
     removeNote,
     listNotes,
+    readNote,
 };

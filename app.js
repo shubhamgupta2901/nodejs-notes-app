@@ -21,8 +21,9 @@ const listNotes = () => {
     notes.listNotes();
 }
 
-const readNote = () => {
+const readNote = (argv) => {
     console.log('Read a note');
+    notes.readNote(argv.title);
 }
 
 //Create add command 
@@ -69,6 +70,13 @@ yargs.command({
 yargs.command({
     command: 'read',
     describe: 'Read a note',
+    builder:{
+        title:{
+            describe: 'Title of the note',
+            demandOption: true,
+            type: 'string',
+        }
+    },
     handler: readNote,
 })
 
