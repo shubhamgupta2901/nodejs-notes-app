@@ -1,12 +1,14 @@
 const chalk = require('chalk');
 const yargs = require('yargs');
-console.log(chalk.blue.inverse('Success!'));
+const notes = require('./notes');
+
+console.log(chalk.blue.inverse('Successfully ran app.js!'));
 
 //customize yargs
 yargs.version('1.0.1');
 
-const addNewNote = (argv) => {
-   console.log(`Adding a new note with title: ${chalk.cyan.bold.underline(argv.title)} and body: ${chalk.cyan.underline.bold(argv.body)}`);
+const addNote = (argv) => {
+    notes.addNote(argv.title,argv.body);
 }
 
 const removeNote = () => {
@@ -38,7 +40,7 @@ yargs.command({
             type: 'string',
         }
     },
-    handler: (argv)=>addNewNote(argv),
+    handler: (argv)=> addNote(argv),
 });
 
 // Create Remove command 
