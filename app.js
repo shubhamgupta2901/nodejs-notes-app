@@ -13,7 +13,7 @@ const addNote = (argv) => {
 
 const removeNote = (argv) => {
     console.log('Remove a note with title: ' + argv.title);
-    console.log(argv);
+    notes.removeNote(argv.title);
 }
 
 const listNotes = () => {

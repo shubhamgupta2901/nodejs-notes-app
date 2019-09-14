@@ -22,6 +22,25 @@ const addNote = (title, body)=> {
     saveNotes(notes);
 }
 
+/**
+ * Remove the note with the same title as title provided as argument.
+ * @param {*} title the title of note to be deleted.
+ * If the title does not exist,or if the file is empty array (or if the data file does not exist) return
+ * else delete the note and save it to data file.
+ */
+const removeNote = (title) => {
+    const notes = loadNotes();
+    const indexOfNoteWithSameTitle = notes.length === 0 ? -1 : notes.findIndex(note=> note.title === title);
+    
+    if(indexOfNoteWithSameTitle === -1){
+        console.log(chalk.red.inverse(`Note with title ${chalk.underline.bold(title)} does not exist!`));
+        return;
+    }
+    //change the contents of original array by removing 1 element at index indexOfNoteWithSameTitle
+    notes.splice(indexOfNoteWithSameTitle,1);
+    saveNotes(notes);
+}
+
 
 /**
  * Read the file and return the JSON inside it as a JS object.
@@ -54,4 +73,7 @@ const saveNotes = (notes) => {
     }  
 }
 
-module.exports = {addNote};
+module.exports = {
+    addNote,
+    removeNote,
+};
