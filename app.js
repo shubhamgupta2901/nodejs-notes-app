@@ -18,6 +18,7 @@ const removeNote = (argv) => {
 
 const listNotes = () => {
     console.log('List notes');
+    notes.listNotes();
 }
 
 const readNote = () => {

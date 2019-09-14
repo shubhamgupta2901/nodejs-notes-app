@@ -41,6 +41,20 @@ const removeNote = (title) => {
     saveNotes(notes);
 }
 
+/**
+ * List all the notes saved in the file.
+ */
+const listNotes = ()=>{
+    const notes = loadNotes();
+    if(notes.length === 0){
+        console.log(chalk.blue.inverse('No notes saved!'));
+        return;
+    }
+    const noteTitles = notes.map(note=> note.title);
+    console.log(chalk.blue.inverse('List of notes: '));
+    console.log(chalk.blue(noteTitles.join("\n")));
+}
+
 
 /**
  * Read the file and return the JSON inside it as a JS object.
@@ -76,4 +90,5 @@ const saveNotes = (notes) => {
 module.exports = {
     addNote,
     removeNote,
+    listNotes,
 };
