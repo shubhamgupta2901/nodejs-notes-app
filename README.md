@@ -9,32 +9,12 @@ Every Command has some required options:
 
 | Command          |      Description            |  Required Options |
 |:----------------:|-----------------------------|------------------------------------------|
-| [add](#add)      |  Add a new note             | ```title``` (string), ```body```(string) |
-| [remove](#remove)|  Remove an existing note    | ```title``` (string)                     |
-| [list](#list)    |  List all the notes         |                                          |
-| [read](#read)    |  Read a note                | ```title``` (string)                     |
+| **```add```**      |  Add a new note             | ```title``` (string), ```body```(string) |
+| **```remove```**|  Remove an existing note    | ```title``` (string)                     |
+| **```list```**    |  List all the notes         |                                          |
+| **```read```**    |  Read a note                | ```title``` (string)                     |
 
 
-### add
+#### Screenshot
 
-```console
-node app.js add --title='Film' --body='Nebraska'
-```
-
-###remove
-
-```console
-node app.js remove --title='Film'
-```
-
-###list
-
-```console
-node app.js remove --title='Film'
-```
-
-###read
-
-```console
-node app.js remove --title='Film'
-```
+![](https://github.com/shubhamgupta2901/nodejs-notes-app/blob/master/nodejs-notes-app-screenshot.png)
